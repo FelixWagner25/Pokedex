@@ -23,7 +23,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/starndard.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/paddingMargins.css" />
+    <link rel="icon" href="./assets/icons/pokeball.png" />
     <title>Pokedex</title>
   </head>
-  <body></body>
+  <body onload="init()">
+    <header>
+      <div class="center-content">
+        <div class="max-width-1440px">
+          <div class="header-content pd-lr-dflt">
+            <div class="logo-div">
+              <img
+                src="./assets/icons/pokeball.png"
+                alt="pokeball"
+                class="logo-img"
+              />
+              <span class="logo-text">Pokedex</span>
+            </div>
+            <input type="text" class="search" placeholder="search" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="center-content">
+      <div class="max-width-1440px">
+        <div class="content pd-lr-dflt pd-tb-24px">
+          <div class="card pd-lr-16px pd-tb-16px grass-card">
+            <div class="card-name">Bisasam</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute grass-attr">Grass</span></div>
+              <img class="card-img" src="./assets/img/1.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px grass-card">
+            <div class="card-name">Bisaknosp</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute grass-attr">Grass</span></div>
+              <img class="card-img" src="./assets/img/2.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px grass-card">
+            <div class="card-name">Bisafloa</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute grass-attr">Grass</span></div>
+              <img class="card-img" src="./assets/img/3.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px fire-card">
+            <div class="card-name">Glumanda</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute fire-attr">Fire</span></div>
+              <img class="card-img" src="./assets/img/4.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px fire-card">
+            <div class="card-name">Glutexo</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute fire-attr">Fire</span></div>
+              <img class="card-img" src="./assets/img/5.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px fire-card">
+            <div class="card-name">Glurag</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute fire-attr">Fire</span></div>
+              <div><span class="attribute fire-attr">Flight</span></div>
+              <img class="card-img" src="./assets/img/6.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px water-card">
+            <div class="card-name">Shiggy</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute water-attr">Water</span></div>
+              <img class="card-img" src="./assets/img/7.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px water-card">
+            <div class="card-name">Shellok</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute water-attr">Water</span></div>
+              <img class="card-img" src="./assets/img/8.png" alt="Glumanda" />
+            </div>
+          </div>
+          <div class="card pd-lr-16px pd-tb-16px water-card">
+            <div class="card-name">Trutok</div>
+            <div class="card-content pd-tb-16px">
+              <div><span class="attribute water-attr">Water</span></div>
+              <img class="card-img" src="./assets/img/9.png" alt="Glumanda" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
 </html>

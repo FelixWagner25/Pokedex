@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.center-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.max-width-1440px {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.pd-tb-16px {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pd-tb-8px {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pd-tb-24px {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.pd-t-16px {
+  padding-top: 16px;
+}
+
+.pd-t-8px {
+  padding-top: 8px;
+}
+
+.pd-t-48px {
+  padding-top: 48px;
+}
+
+.pd-b-8px {
+  padding-bottom: 8px;
+}
+
+.pd-b-16px {
+  padding-bottom: 16px;
+}
+
+.margin-tb-16px {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.margin-tb-8px {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.d-flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.d-flex-row-center {
+  display: flex;
+  justify-content: center;
+}
