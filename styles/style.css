@@ -95,6 +95,7 @@ header {
   position: absolute;
   top: 32px;
   right: 16px;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.75));
 }
 
 footer {
@@ -103,11 +104,11 @@ footer {
 }
 
 .fire-card {
-  background-color: rgb(250, 139, 102);
+  background-color: rgb(202, 54, 54);
 }
 
 .fire-attr {
-  background-color: rgb(255, 82, 19);
+  background-color: rgb(255, 92, 32);
 }
 
 .grass-card {
@@ -130,9 +131,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.loadmore-btn-div {
 }
 
 .btn {
