@@ -47,7 +47,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 32px;
 }
 
 .card {
@@ -63,6 +63,8 @@ header {
 
 .card:hover {
   cursor: pointer;
+  box-shadow: 0 0 16px 0 #4db9a3;
+  transition-delay: 0.1s;
 }
 
 .card-name {
@@ -101,30 +103,6 @@ header {
 footer {
   height: 96px;
   background-color: #d3dad0;
-}
-
-.fire-card {
-  background-color: rgb(202, 54, 54);
-}
-
-.fire-attr {
-  background-color: rgb(255, 92, 32);
-}
-
-.grass-card {
-  background-color: rgb(90, 190, 90);
-}
-
-.grass-attr {
-  background-color: rgb(27, 131, 27);
-}
-
-.water-card {
-  background-color: rgb(59, 153, 254);
-}
-
-.water-attr {
-  background-color: rgb(0, 94, 255);
 }
 
 .loadmore-btn-div {

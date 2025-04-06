@@ -28,7 +28,10 @@
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/paddingMargins.css" />
     <link rel="stylesheet" href="./styles/overlay.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="icon" href="./assets/icons/pokeball.png" />
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/templates.js"></script>
     <title>Pokedex</title>
   </head>
   <body onload="init()">
@@ -51,7 +54,7 @@
     </header>
     <section class="center-content">
       <div class="max-width-1440px">
-        <div class="content pd-lr-dflt pd-tb-24px">
+        <div class="content pd-lr-dflt pd-tb-24px" id="content">
           <div class="card pd-lr-16px pd-tb-16px grass-card">
             <div class="card-name">Bisasam</div>
             <div class="card-content pd-tb-16px">
@@ -118,12 +121,12 @@
           </div>
         </div>
         <div class="loadmore-btn-div pd-b-24px">
-          <button class="btn">Load more</button>
+          <button onclick="loadMorePokemon()" class="btn">Load more</button>
         </div>
       </div>
     </section>
     <section class="overlay-div" id="overlay-div">
-      <div class="overlay-dialog fire-card">
+      <div class="overlay-dialog fire-card d-none">
         <img
           src="./assets/icons/close_white.png"
           alt="Close"
