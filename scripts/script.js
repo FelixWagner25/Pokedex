@@ -11,15 +11,24 @@ let numberPokemons = 16;
 
 let pokemonArray = [];
 
+let currentPokemons = [];
+
 async function init() {
+  await loadAndShowPokemons();
+}
+
+async function loadAndShowPokemons() {
+  showLoadingSpinner();
   try {
     initializePokemonArray();
     await loadAllPokemonData();
+    currentPokemons = pokemonArray;
     renderCards();
   } catch (error) {
     console.log("Error at loading pokemon data:");
     console.log(error);
   }
+  hideLoadingSpinner();
 }
 
 async function loadAllPokemonData() {
@@ -87,7 +96,7 @@ function capitaliseFirstCharacter(word) {
 function renderCards() {
   contentRef = document.getElementById("content");
   contentRef.innerHTML = "";
-  for (let indexArray = 0; indexArray < pokemonArray.length; indexArray++) {
+  for (let indexArray = 0; indexArray < currentPokemons.length; indexArray++) {
     if (pokemonHas2Attributes(indexArray)) {
       contentRef.innerHTML += getCardTemplate2Attr(indexArray);
     } else {
@@ -97,7 +106,7 @@ function renderCards() {
 }
 
 function pokemonHas2Attributes(indexArray) {
-  if (pokemonArray[indexArray].types.length == 2) {
+  if (currentPokemons[indexArray].types.length == 2) {
     return true;
   }
   return false;
@@ -105,5 +114,47 @@ function pokemonHas2Attributes(indexArray) {
 
 async function loadMorePokemon(additionalPokemon = 16) {
   numberPokemons += additionalPokemon;
-  await init();
+  await loadAndShowPokemons();
+}
+
+function filterPokemons(filterKey) {
+  filterKey = filterKey.toLowerCase();
+  filteredPokemons = pokemonArray.filter((pokemon) =>
+    pokemon.name.includes(filterKey)
+  );
+  return filteredPokemons;
+}
+
+function searchAndShowPokemons() {
+  filterKey = getInputValueSearch();
+  if (filterKey === "") {
+    currentPokemons = pokemonArray;
+    renderCards();
+    return;
+  } else if (hasMoreThan2Characters(filterKey)) {
+    currentPokemons = filterPokemons(filterKey);
+    renderCards();
+  } else return;
+}
+
+function getInputValueSearch() {
+  inputValue = document.getElementById("search").value;
+  return inputValue;
+}
+
+function hasMoreThan2Characters(word) {
+  if (word.length > 2) {
+    return true;
+  }
+  return false;
+}
+
+function showLoadingSpinner() {
+  loaderRef = document.getElementById("loading-spinner-div");
+  loaderRef.classList.add("loading-spinner-div");
+}
+
+function hideLoadingSpinner() {
+  loaderRef = document.getElementById("loading-spinner-div");
+  loaderRef.classList.remove("loading-spinner-div");
 }

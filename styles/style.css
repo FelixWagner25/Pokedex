@@ -42,7 +42,6 @@ header {
 }
 
 .content {
-  min-height: calc(100vh - 192px);
   display: flex;
   justify-content: center;
   align-items: center;

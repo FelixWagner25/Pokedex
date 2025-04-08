@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="./styles/paddingMargins.css" />
     <link rel="stylesheet" href="./styles/overlay.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/loadingspinner.css" />
     <link rel="icon" href="./assets/icons/pokeball.png" />
     <script src="./scripts/script.js"></script>
     <script src="./scripts/templates.js"></script>
@@ -47,81 +48,28 @@
               />
               <span class="logo-text">Pokedex</span>
             </div>
-            <input type="text" class="search" placeholder="search" />
+            <input
+              type="text"
+              class="search"
+              placeholder="search"
+              onkeyup="searchAndShowPokemons()"
+              id="search"
+            />
           </div>
         </div>
       </div>
     </header>
     <section class="center-content">
       <div class="max-width-1440px">
-        <div class="content pd-lr-dflt pd-tb-24px" id="content">
-          <div class="card pd-lr-16px pd-tb-16px grass-card">
-            <div class="card-name">Bisasam</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute grass-attr">Grass</span></div>
-              <img class="card-img" src="./assets/img/1.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px grass-card">
-            <div class="card-name">Bisaknosp</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute grass-attr">Grass</span></div>
-              <img class="card-img" src="./assets/img/2.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px grass-card">
-            <div class="card-name">Bisafloa</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute grass-attr">Grass</span></div>
-              <img class="card-img" src="./assets/img/3.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px fire-card">
-            <div class="card-name">Glumanda</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute fire-attr">Fire</span></div>
-              <img class="card-img" src="./assets/img/4.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px fire-card">
-            <div class="card-name">Glutexo</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute fire-attr">Fire</span></div>
-              <img class="card-img" src="./assets/img/5.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px fire-card">
-            <div class="card-name">Glurag</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute fire-attr">Fire</span></div>
-              <div><span class="attribute fire-attr">Flight</span></div>
-              <img class="card-img" src="./assets/img/6.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px water-card">
-            <div class="card-name">Shiggy</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute water-attr">Water</span></div>
-              <img class="card-img" src="./assets/img/7.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px water-card">
-            <div class="card-name">Shellok</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute water-attr">Water</span></div>
-              <img class="card-img" src="./assets/img/8.png" alt="Glumanda" />
-            </div>
-          </div>
-          <div class="card pd-lr-16px pd-tb-16px water-card">
-            <div class="card-name">Trutok</div>
-            <div class="card-content pd-tb-16px">
-              <div><span class="attribute water-attr">Water</span></div>
-              <img class="card-img" src="./assets/img/9.png" alt="Glumanda" />
-            </div>
-          </div>
+        <div class="content pd-lr-dflt pd-tb-24px" id="content"></div>
+        <div class="d-none" id="loading-spinner-div">
+          <div class="loading-spinner" id="loading-spinner"></div>
+          <div class="loading-text">Loading ...</div>
         </div>
         <div class="loadmore-btn-div pd-b-24px">
-          <button onclick="loadMorePokemon()" class="btn">Load more</button>
+          <a href="#loading-spinner-div">
+            <button onclick="loadMorePokemon()" class="btn">Load more</button>
+          </a>
         </div>
       </div>
     </section>
