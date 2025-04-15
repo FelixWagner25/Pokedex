@@ -36,6 +36,161 @@
     <title>Pokedex</title>
   </head>
   <body onload="init()">
+    <section class="overlay-div fire-card d-none" id="detailed-card-div">
+      <img
+        src="./assets/icons/close_white.png"
+        alt="Close"
+        class="close-icon"
+        onclick="closeDetailedCard()"
+      />
+      <div class="overlay-name pd-lr-detailed-card">Glumanda</div>
+      <div class="overlay-attr-div pd-lr-detailed-card">
+        <div class="overlay-attr fire-attr">Fire</div>
+        <div class="overlay-attr fire-attr">Flight</div>
+      </div>
+      <div class="overlay-img-div">
+        <img
+          src="./assets/icons/arrow_back_white.png"
+          alt="arrow back"
+          class="arrow-back"
+          id="arrow-back"
+        />
+        <img src="./assets/img/4.png" alt="Glumanda" class="overlay-img" />
+        <img
+          src="./assets/icons/arrow_forward_white.png"
+          alt="arrow forward"
+          class="arrow-forward"
+          id="arrow-forward"
+        />
+      </div>
+      <div class="overlay-info">
+        <div class="info-tabs-div pd-lr-32px">
+          <button
+            class="tab-lnk focus"
+            onclick="showDetailedTab('about-tab')"
+            id="about-tab-lnk"
+          >
+            About
+          </button>
+          <button
+            class="tab-lnk"
+            onclick="showDetailedTab('base-stats-tab')"
+            id="base-stats-tab-lnk"
+          >
+            Base Stats
+          </button>
+          <button
+            class="tab-lnk"
+            onclick="showDetailedTab('evolution-tab')"
+            id="evolution-tab-lnk"
+          >
+            Evolution
+          </button>
+          <button
+            class="tab-lnk"
+            onclick="showDetailedTab('moves-tab')"
+            id="moves-tab-lnk"
+          >
+            Moves
+          </button>
+        </div>
+        <div class="center-content margin-t-16px">
+          <nav id="nav-indicator-div">
+            <div id="nav-indicator"></div>
+          </nav>
+        </div>
+        <div class="pd-lr-32px pd-tb-24px" id="about-tab">
+          <div class="about-tab-div">
+            <span class="card-text">Id</span>
+            <span class="card-text">1</span>
+            <span class="card-text">Height</span>
+            <span class="card-text">60 cm</span>
+            <span class="card-text">Weight</span>
+            <span class="card-text">8.5 kg</span>
+            <span class="card-text">Abilities</span>
+            <span class="card-text">Blaze, Solar-Power</span>
+          </div>
+        </div>
+        <div class="d-none pd-lr-32px pd-tb-24px" id="base-stats-tab">
+          <div class="base-stats-div">
+            <span class="card-text">HP</span>
+            45
+            <span>progression</span>
+            <span class="card-text">Attack</span>
+            60
+            <span>progression</span>
+            <span class="card-text">Defense</span
+            ><span class="card-text">26</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Attack</span
+            ><span class="card-text">72</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Defense</span>
+            <span class="card-text">46</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">Speed</span>
+            <span class="card-text">12</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">HP</span>
+            45
+            <span>progression</span>
+            <span class="card-text">Attack</span>
+            60
+            <span>progression</span>
+            <span class="card-text">Defense</span
+            ><span class="card-text">26</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Attack</span
+            ><span class="card-text">72</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Defense</span>
+            <span class="card-text">46</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">Speed</span>
+            <span class="card-text">12</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">HP</span>
+            45
+            <span>progression</span>
+            <span class="card-text">Attack</span>
+            60
+            <span>progression</span>
+            <span class="card-text">Defense</span
+            ><span class="card-text">26</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Attack</span
+            ><span class="card-text">72</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Defense</span>
+            <span class="card-text">46</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">Speed</span>
+            <span class="card-text">12</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">HP</span>
+            45
+            <span>progression</span>
+            <span class="card-text">Attack</span>
+            60
+            <span>progression</span>
+            <span class="card-text">Defense</span
+            ><span class="card-text">26</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Attack</span
+            ><span class="card-text">72</span
+            ><span class="card-text">progression</span>
+            <span class="card-text">Sp. Defense</span>
+            <span class="card-text">46</span>
+            <span class="card-text">progression</span>
+            <span class="card-text">Speed</span>
+            <span class="card-text">12</span>
+            <span class="card-text">progression</span>
+          </div>
+        </div>
+        <div class="d-none pd-lr-32px" id="evolution-tab"></div>
+        <div class="d-none pd-lr-32px" id="moves-tab"></div>
+      </div>
+    </section>
     <header>
       <div class="center-content">
         <div class="max-width-1440px">
@@ -59,6 +214,7 @@
         </div>
       </div>
     </header>
+    <div class="background-dim d-none" id="background-dim"></div>
     <section class="center-content">
       <div class="max-width-1440px">
         <div class="content pd-lr-dflt pd-tb-24px" id="content"></div>
@@ -68,44 +224,15 @@
         </div>
         <div class="loadmore-btn-div pd-b-24px">
           <a href="#loading-spinner-div">
-            <button onclick="loadMorePokemon()" class="btn">Load more</button>
+            <button onclick="loadMorePokemon()" class="btn" id="load-more-btn">
+              Load more
+            </button>
           </a>
         </div>
       </div>
     </section>
-    <section class="overlay-div" id="overlay-div">
-      <div class="overlay-dialog fire-card d-none">
-        <img
-          src="./assets/icons/close_white.png"
-          alt="Close"
-          class="close-icon"
-        />
-        <div class="overlay-name">Glumanda</div>
-        <div class="overlay-attr-div">
-          <div class="overlay-attr fire-attr">Fire</div>
-          <div class="overlay-attr fire-attr">Flight</div>
-        </div>
-        <div class="overlay-info">
-          <div class="info-tabs-div margin-tb-16px pd-lr-32px">
-            <button class="tab-lnk">About</button>
-            <button class="tab-lnk">Base Stats</button>
-            <button class="tab-lnk">Evolution</button>
-            <button class="tab-lnk">Moves</button>
-          </div>
-          <div class="base-stats-div pd-lr-32px">
-            <span class="card-text">HP</span>
-            45
-            <span>progression</span>
-            <span class="card-text">Attack</span>
-            60
-            <span>progression</span>
-          </div>
-        </div>
-        <div class="overlay-img-div">
-          <img src="./assets/img/4.png" alt="Glumanda" class="overlay-img" />
-        </div>
-      </div>
-    </section>
-    <footer></footer>
+    <footer>
+      <div class="max-width-1440px"></div>
+    </footer>
   </body>
 </html>

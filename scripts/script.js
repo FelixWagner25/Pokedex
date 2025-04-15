@@ -13,6 +13,8 @@ let pokemonArray = [];
 
 let currentPokemons = [];
 
+let currentDetailedTabId = "about-tab";
+
 async function init() {
   await loadAndShowPokemons();
 }
@@ -114,7 +116,9 @@ function pokemonHas2Attributes(indexArray) {
 
 async function loadMorePokemon(additionalPokemon = 16) {
   numberPokemons += additionalPokemon;
+  disableLoadMoreBtn();
   await loadAndShowPokemons();
+  enableLoadMoreBtn();
 }
 
 function filterPokemons(filterKey) {
@@ -157,4 +161,67 @@ function showLoadingSpinner() {
 function hideLoadingSpinner() {
   loaderRef = document.getElementById("loading-spinner-div");
   loaderRef.classList.remove("loading-spinner-div");
+}
+
+function showDetailedCard(indexArray) {
+  openDetailedCard();
+  blurBackground();
+}
+
+function openDetailedCard(indexArray) {
+  detailedCardRef = document.getElementById("detailed-card-div");
+  detailedCardRef.classList.remove("d-none");
+}
+
+function blurBackground() {
+  backgroundRef = document.getElementById("background-dim");
+  backgroundRef.classList.remove("d-none");
+  document.body.style.overflow = "hidden";
+}
+
+function disableLoadMoreBtn() {
+  document.getElementById("load-more-btn").classList.add("d-none");
+}
+
+function enableLoadMoreBtn() {
+  document.getElementById("load-more-btn").classList.remove("d-none");
+}
+
+function closeDetailedCard() {
+  detailedCardRef = document.getElementById("detailed-card-div");
+  detailedCardRef.classList.add("d-none");
+  unblurBackground();
+}
+
+function unblurBackground() {
+  backgroundRef = document.getElementById("background-dim");
+  backgroundRef.classList.add("d-none");
+  document.body.style.overflow = "";
+}
+
+function showDetailedTab(htmlId) {
+  removeFocusFromAllTabs();
+  addFocusToTabLnk(htmlId + "-lnk");
+  closeCurrentDetailedTab(currentDetailedTabId);
+  openDetailedTab(htmlId);
+}
+
+function removeFocusFromAllTabs() {
+  tabRefs = document.getElementsByClassName("tab-lnk");
+  for (let i = 0; i < tabRefs.length; i++) {
+    tabRefs[i].classList.remove("focus");
+  }
+}
+
+function addFocusToTabLnk(htmlId) {
+  document.getElementById(htmlId).classList.add("focus");
+}
+
+function openDetailedTab(htmlId) {
+  document.getElementById(htmlId).classList.remove("d-none");
+  currentDetailedTabId = htmlId;
+}
+
+function closeCurrentDetailedTab(htmlId) {
+  document.getElementById(htmlId).classList.add("d-none");
 }

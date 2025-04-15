@@ -1,19 +1,14 @@
 .overlay-div {
-  position: fixed;
-  top: 80px;
-  left: 16px;
-  right: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay-dialog {
-  width: 492px;
-  min-height: 80px;
-  height: 800px;
+  position: absolute;
+  max-height: 800px;
+  max-width: 492px;
+  top: 50%;
+  margin-top: -400px;
+  left: 50%;
+  margin-left: -246px;
+  z-index: 2;
   border-radius: 24px;
-  position: relative;
+  overflow: auto;
 }
 
 .close-icon {
@@ -23,19 +18,22 @@
   right: 12px;
 }
 
+.close-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .overlay-name {
-  position: absolute;
-  top: 40px;
-  left: 24px;
+  position: relative;
+  top: 32px;
   font-size: 40px;
   font-weight: bold;
   color: white;
 }
 
 .overlay-attr-div {
-  position: absolute;
-  top: 96px;
-  left: 24px;
+  position: relative;
+  top: 40px;
   display: flex;
   gap: 16px;
 }
@@ -47,50 +45,88 @@
   border-radius: 8px;
 }
 
+.overlay-img-div {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: -40px;
+  z-index: 4;
+}
+
+.overlay-img {
+  max-height: 308px;
+}
+
+.arrow-back {
+  position: relative;
+  left: 16px;
+  height: 40px;
+}
+
+.arrow-back:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.arrow-forward {
+  position: relative;
+  right: 16px;
+  height: 40px;
+}
+
+.arrow-forward:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .overlay-info {
-  width: 492px;
-  min-height: 420px;
+  padding-top: 40px;
   background-color: white;
-  position: absolute;
+  width: 100%;
+  position: relative;
   bottom: 0;
   border-radius: 24px;
-  padding-top: 48px;
   display: flex;
   flex-direction: column;
+  z-index: 3;
 }
 
 .info-tabs-div {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
+  gap: 0;
+  background-color: #f1f1f1;
 }
 
 .tab-lnk {
   border: none;
-  color: gray;
   background-color: transparent;
   font-size: 20px;
+  padding: 8px;
 }
 
 .tab-lnk:hover {
-  color: black;
+  background-color: #dddddd;
   cursor: pointer;
 }
 
-.overlay-img-div {
-  position: absolute;
-  top: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.focus {
+  font-weight: bold;
 }
 
-.overlay-img {
-  height: 308px;
+.about-tab-div {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8px;
+  column-gap: 32px;
 }
 
 .base-stats-div {
   display: grid;
   grid-template-columns: max-content max-content max-content;
   gap: 8px;
+  column-gap: 32px;
 }

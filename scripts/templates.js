@@ -2,7 +2,7 @@ function getCardTemplate1Attr(indexArray) {
   return `
     <div class="card pd-lr-16px pd-tb-16px ${
       currentPokemons[indexArray].types[0]
-    }-card">
+    }-card" onclick='showDetailedCard(${indexArray})'>
         <div class="card-name">${capitaliseFirstCharacter(
           currentPokemons[indexArray].name
         )}</div>
@@ -22,7 +22,7 @@ function getCardTemplate2Attr(indexArray) {
   return `
       <div class="card pd-lr-16px pd-tb-16px ${
         currentPokemons[indexArray].types[0]
-      }-card">
+      }-card" onclick='showDetailedCard(${indexArray})'>
           <div class="card-name">${capitaliseFirstCharacter(
             currentPokemons[indexArray].name
           )}</div>
