@@ -1,11 +1,11 @@
 .overlay-div {
   position: absolute;
-  max-height: 800px;
+  max-height: 720px;
   max-width: 492px;
   top: 50%;
   margin-top: -400px;
   left: 50%;
-  margin-left: -246px;
+  margin-left: -214px;
   z-index: 2;
   border-radius: 24px;
   overflow: auto;
@@ -21,6 +21,7 @@
 .close-icon:hover {
   transform: scale(1.1);
   cursor: pointer;
+  transition-delay: 125ms;
 }
 
 .overlay-name {
@@ -69,6 +70,7 @@
 .arrow-back:hover {
   transform: scale(1.1);
   cursor: pointer;
+  transition-delay: 125ms;
 }
 
 .arrow-forward {
@@ -80,6 +82,7 @@
 .arrow-forward:hover {
   transform: scale(1.1);
   cursor: pointer;
+  transition-delay: 125ms;
 }
 
 .overlay-info {
@@ -106,15 +109,19 @@
   border: none;
   background-color: transparent;
   font-size: 20px;
+  font-weight: bold;
   padding: 8px;
+  color: rgb(159, 159, 159);
 }
 
 .tab-lnk:hover {
   background-color: #dddddd;
   cursor: pointer;
+  transition-delay: 125ms;
 }
 
 .focus {
+  color: black;
   font-weight: bold;
 }
 
@@ -134,7 +141,7 @@
 
 .evolution-div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 4px;
 }
@@ -155,7 +162,6 @@
 }
 
 .moves-div {
-  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;

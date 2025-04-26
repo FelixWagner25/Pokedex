@@ -121,6 +121,7 @@ footer {
 .btn:hover {
   cursor: pointer;
   background-color: #b2d7a2;
+  transition-delay: 0.1s;
 }
 
 .background-dim {
