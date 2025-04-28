@@ -50,6 +50,7 @@ function renderAboutTab(indexArray) {
 function renderBaseStatsTab(indexArray) {
   ref = document.getElementById("base-stats-tab");
   ref.innerHTML = getBaseStatsTabTemplate(indexArray);
+  renderAllProgrBars(indexArray);
 }
 
 function renderEvolutionTab(indexArray) {
@@ -64,4 +65,58 @@ function renderEvolutionTab(indexArray) {
 function renderMovesTab(indexArray) {
   ref = document.getElementById("moves-tab");
   ref.innerHTML = getMovesTabTemplate(indexArray);
+}
+
+function renderAllProgrBars(indexArray) {
+  let htmlId = "";
+  let baseStatsValue = 0;
+  for (let i = 0; i < currentPokemons[indexArray].baseStats.length; i++) {
+    htmlId = "progr-" + i;
+    baseStatsValue = currentPokemons[indexArray].baseStats[i].value;
+    insertProgrBarAttributes(htmlId, baseStatsValue);
+  }
+}
+
+function insertProgrBarAttributes(htmlId, baseStatValue) {
+  insertProgrBarColor(htmlId, baseStatValue);
+  //insertProgrBarValue(htmlId, baseStatValue);
+  drawProgrBar(htmlId, baseStatValue);
+}
+
+function insertProgrBarColor(htmlId, baseStatsValue) {
+  if (valueGreaterThan50(baseStatsValue)) {
+    addColorGreen(htmlId);
+  } else {
+    addColorRed(htmlId);
+  }
+}
+
+function insertProgrBarValue(htmlId, baseStatsValue) {
+  let widthPercent = String(baseStatsValue) + "%";
+  document.getElementById(htmlId).style.width = widthPercent;
+}
+
+function drawProgrBar(htmlId, baseStatsValue) {
+  let progrBarRef = document.getElementById(htmlId);
+  progrBarRef.style.width = "";
+  let widthPercent = 0;
+  let widthPercentStr = "";
+  let id = setInterval(frame, 25);
+  function frame() {
+    if (widthPercent >= baseStatsValue) {
+      clearInterval(id);
+    } else {
+      widthPercent++;
+      widthPercentStr = String(widthPercent) + "%";
+      progrBarRef.style.width = widthPercentStr;
+    }
+  }
+}
+
+function addColorRed(htmlId) {
+  document.getElementById(htmlId).classList.add("bg-red");
+}
+
+function addColorGreen(htmlId) {
+  document.getElementById(htmlId).classList.add("bg-green");
 }

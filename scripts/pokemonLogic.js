@@ -37,6 +37,7 @@ async function loadSinglePokemon(indexPokemon) {
   await insertPokemonWeight(indexPokemon);
   await insertPokemonAbilities(indexPokemon);
   await insertPokemonHabitat(indexPokemon);
+  await insertPokemonBaseStats(indexPokemon);
   await insertPokemonEvolutionImages(indexPokemon);
   await insertPokemonFirstFiveMoves(indexPokemon);
 }

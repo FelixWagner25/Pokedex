@@ -95,3 +95,10 @@ function closeAllDetailedTabs() {
   document.getElementById("evolution-tab").classList.add("d-none");
   document.getElementById("moves-tab").classList.add("d-none");
 }
+
+function valueGreaterThan50(value) {
+  if (value > 50) {
+    return true;
+  }
+  return false;
+}

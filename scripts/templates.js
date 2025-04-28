@@ -213,15 +213,15 @@ function getDetailedCardCoreTemplate2Attr(indexArray) {
 function getAboutTabTemplate(indexArray) {
   return `
       <div class="about-tab-div">
-        <span class="card-text">Id</span>
+        <span class="card-text">id</span>
         <span class="card-text">${currentPokemons[indexArray].id}</span>
-        <span class="card-text">Height</span>
+        <span class="card-text">height</span>
         <span class="card-text">${currentPokemons[indexArray].height} dm</span>
-        <span class="card-text">Weight</span>
+        <span class="card-text">weight</span>
         <span class="card-text">${currentPokemons[indexArray].weight} hg</span>
-        <span class="card-text">Abilities</span>
+        <span class="card-text">abilities</span>
         <span class="card-text">${getPokemonAllAbilites(indexArray)}</span>
-        <span class="card-text">Habitat</span>
+        <span class="card-text">habitat</span>
         <span class="card-text">${currentPokemons[indexArray].habitat}</span>
       </div>
   `;
@@ -229,26 +229,38 @@ function getAboutTabTemplate(indexArray) {
 
 function getBaseStatsTabTemplate(indexArray) {
   return `
-            <div class="base-stats-div">
-            <span class="card-text">HP</span>
-            45
-            <span>progression</span>
-            <span class="card-text">Attack</span>
-            60
-            <span>progression</span>
-            <span class="card-text">Defense</span
-            ><span class="card-text">26</span
-            ><span class="card-text">progression</span>
-            <span class="card-text">Sp. Attack</span
-            ><span class="card-text">72</span
-            ><span class="card-text">progression</span>
-            <span class="card-text">Sp. Defense</span>
-            <span class="card-text">46</span>
-            <span class="card-text">progression</span>
-            <span class="card-text">Speed</span>
-            <span class="card-text">12</span>
-            <span class="card-text">progression</span>
-            </div>    
+          <div class="base-stats-div">
+            <span class="card-text">${currentPokemons[indexArray].baseStats[0].name}</span>
+            ${currentPokemons[indexArray].baseStats[0].value}
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-0"></div>
+            </div>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[1].name}</span>
+            ${currentPokemons[indexArray].baseStats[1].value}
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-1"></div>
+            </div>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[2].name}</span>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[2].value}</span>
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-2"></div>
+            </div>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[3].name}</span>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[3].value}</span>
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-3"></div>
+            </div>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[4].name}</span>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[4].value}</span>
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-4"></div>
+            </div>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[5].name}</span>
+            <span class="card-text">${currentPokemons[indexArray].baseStats[5].value}</span>
+            <div class="progressbar-wrapper">
+              <div class="progressbar" id="progr-5"></div>
+            </div>
+          </div>    
   `;
 }
 

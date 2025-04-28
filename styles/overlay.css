@@ -166,3 +166,19 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.progressbar-wrapper {
+  width: 200px;
+  height: 8px;
+  background-color: #dddddd;
+  margin-top: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.progressbar {
+  height: 6px;
+  border-radius: 4px;
+}
