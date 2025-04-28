@@ -6,7 +6,7 @@ let pokemonArray = [];
 
 let currentPokemons = [];
 
-let currentDetailedTabId = "about-tab";
+let currentDetailedTabId = "base-stats-tab";
 
 async function init() {
   await loadAndShowPokemons();

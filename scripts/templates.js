@@ -64,6 +64,7 @@ function getDetailedCardCoreTemplate1Attr(indexArray) {
           alt="arrow back"
           class="arrow-back"
           id="arrow-back"
+          onclick="showPreviousPokemon(${indexArray})"
         />
         <img src=${currentPokemons[indexArray].image} alt="${
     currentPokemons[indexArray].name
@@ -73,6 +74,7 @@ function getDetailedCardCoreTemplate1Attr(indexArray) {
           alt="arrow forward"
           class="arrow-forward"
           id="arrow-forward"
+          onclick="showNextPokemon(${indexArray})"
         />
       </div>
       <div class="overlay-info">
@@ -150,6 +152,7 @@ function getDetailedCardCoreTemplate2Attr(indexArray) {
       alt="arrow back"
       class="arrow-back"
       id="arrow-back"
+      onclick="showPreviousPokemon(${indexArray})"
     />
     <img src=${currentPokemons[indexArray].image} alt="${
     currentPokemons[indexArray].name
@@ -159,6 +162,7 @@ function getDetailedCardCoreTemplate2Attr(indexArray) {
       alt="arrow forward"
       class="arrow-forward"
       id="arrow-forward"
+      onclick="showNextPokemon(${indexArray})"
     />
   </div>
   <div class="overlay-info">

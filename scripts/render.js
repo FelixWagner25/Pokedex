@@ -101,7 +101,7 @@ function drawProgrBar(htmlId, baseStatsValue) {
   progrBarRef.style.width = "";
   let widthPercent = 0;
   let widthPercentStr = "";
-  let id = setInterval(frame, 25);
+  let id = setInterval(frame, 20);
   function frame() {
     if (widthPercent >= baseStatsValue) {
       clearInterval(id);
@@ -119,4 +119,34 @@ function addColorRed(htmlId) {
 
 function addColorGreen(htmlId) {
   document.getElementById(htmlId).classList.add("bg-green");
+}
+
+function showNextPokemon(indexArray) {
+  let nextIndexArray = getNextIndexArray(indexArray);
+  showDetailedCard(nextIndexArray);
+}
+
+function showPreviousPokemon(indexArray) {
+  let previousIndexArray = getPreviousIndexArray(indexArray);
+  showDetailedCard(previousIndexArray);
+}
+
+function getNextIndexArray(indexArray) {
+  let nextIndexArray;
+  if (indexArray == currentPokemons.length - 1) {
+    nextIndexArray = 0;
+  } else {
+    nextIndexArray = indexArray + 1;
+  }
+  return nextIndexArray;
+}
+
+function getPreviousIndexArray(indexArray) {
+  let previousIndexArray;
+  if (indexArray == 0) {
+    previousIndexArray = currentPokemons.length - 1;
+  } else {
+    previousIndexArray = indexArray - 1;
+  }
+  return previousIndexArray;
 }

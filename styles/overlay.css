@@ -71,6 +71,7 @@
   transform: scale(1.1);
   cursor: pointer;
   transition-delay: 125ms;
+  cursor: pointer;
 }
 
 .arrow-forward {
@@ -83,6 +84,7 @@
   transform: scale(1.1);
   cursor: pointer;
   transition-delay: 125ms;
+  cursor: pointer;
 }
 
 .overlay-info {
@@ -168,7 +170,7 @@
 }
 
 .progressbar-wrapper {
-  width: 200px;
+  width: 160px;
   height: 8px;
   background-color: #dddddd;
   margin-top: 6px;
