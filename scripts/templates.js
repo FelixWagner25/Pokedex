@@ -252,14 +252,44 @@ function getBaseStatsTabTemplate(indexArray) {
   `;
 }
 
-function getEvolutionTabTemplate2Level(indexArray) {}
+function getEvolutionTabTemplate2Level(indexArray) {
+  return `
+  <div class="evolution-div">
+            <div class="evolution-pokemon">
+              <img src="${
+                currentPokemons[indexArray].evolutionImages[0].image
+              }" alt="" class="evolution-img" />
+              <p class="evolution-text">${capitaliseFirstCharacter(
+                currentPokemons[indexArray].evolutionImages[0].name
+              )}</p>
+            </div>
+            <img
+              src="./assets/icons/arrow_forward_gray.png"
+              alt="arrow forward"
+              class="evolution-arrow"
+            />
+            <div class="evolution-pokemon">
+              <img src="${
+                currentPokemons[indexArray].evolutionImages[1].image
+              }" alt="" class="evolution-img" />
+              <p class="evolution-text">${capitaliseFirstCharacter(
+                currentPokemons[indexArray].evolutionImages[1].name
+              )}</p>
+            </div>
+          </div>
+  `;
+}
 
 function getEvolutionTabTemplate3Level(indexArray) {
   return `
   <div class="evolution-div">
             <div class="evolution-pokemon">
-              <img src="./assets/img/4.png" alt="" class="evolution-img" />
-              <p class="evolution-text">Glumanda</p>
+              <img src="${
+                currentPokemons[indexArray].evolutionImages[0].image
+              }" alt="" class="evolution-img" />
+              <p class="evolution-text">${capitaliseFirstCharacter(
+                currentPokemons[indexArray].evolutionImages[0].name
+              )}</p>
             </div>
             <img
               src="./assets/icons/arrow_forward_gray.png"
@@ -267,8 +297,12 @@ function getEvolutionTabTemplate3Level(indexArray) {
               class="evolution-arrow"
             />
             <div class="evolution-pokemon">
-              <img src="./assets/img/5.png" alt="" class="evolution-img" />
-              <p class="evolution-text">Glutexo</p>
+              <img src="${
+                currentPokemons[indexArray].evolutionImages[1].image
+              }" alt="" class="evolution-img" />
+              <p class="evolution-text">${capitaliseFirstCharacter(
+                currentPokemons[indexArray].evolutionImages[1].name
+              )}</p>
             </div>
             <img
               src="./assets/icons/arrow_forward_gray.png"
@@ -276,8 +310,12 @@ function getEvolutionTabTemplate3Level(indexArray) {
               class="evolution-arrow"
             />
             <div class="evolution-pokemon">
-              <img src="./assets/img/6.png" alt="" class="evolution-img" />
-              <p class="evolution-text">Glurag</p>
+              <img src="${
+                currentPokemons[indexArray].evolutionImages[2].image
+              }" alt="" class="evolution-img" />
+              <p class="evolution-text">${capitaliseFirstCharacter(
+                currentPokemons[indexArray].evolutionImages[2].name
+              )}</p>
             </div>
           </div>
   `;
@@ -286,11 +324,11 @@ function getEvolutionTabTemplate3Level(indexArray) {
 function getMovesTabTemplate(indexArray) {
   return `
             <div class="moves-div">
-            <span>Move 1</span>
-            <span>Move 2</span>
-            <span>Move 3</span>
-            <span>Move 4</span>
-            <span>Move 5</span>
+            <span>${currentPokemons[indexArray].moves[0]}</span>
+            <span>${currentPokemons[indexArray].moves[1]}</span>
+            <span>${currentPokemons[indexArray].moves[2]}</span>
+            <span>${currentPokemons[indexArray].moves[3]}</span>
+            <span>${currentPokemons[indexArray].moves[4]}</span>
           </div>
   `;
 }
