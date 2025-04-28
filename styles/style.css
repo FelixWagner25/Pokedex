@@ -132,4 +132,21 @@ footer {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .search {
+    width: 160px;
+  }
+}
+
+@media (max-width: 392px) {
+  .search {
+    width: 120px;
+  }
+  .logo-text {
+    font-size: 20px;
+  }
 }

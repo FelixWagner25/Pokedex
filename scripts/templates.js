@@ -78,7 +78,7 @@ function getDetailedCardCoreTemplate1Attr(indexArray) {
         />
       </div>
       <div class="overlay-info">
-        <div class="info-tabs-div pd-lr-32px">
+        <div class="info-tabs-div pd-lr-dflt">
           <button
             class="tab-lnk focus"
             onclick="showDetailedTab('about-tab')"
@@ -113,13 +113,13 @@ function getDetailedCardCoreTemplate1Attr(indexArray) {
             <div id="nav-indicator"></div>
           </nav>
         </div>
-        <div class="pd-lr-32px pd-tb-24px" id="about-tab">
+        <div class="pd-lr-dflt pd-tb-24px" id="about-tab">
         </div>
-        <div class="d-none pd-lr-32px pd-tb-24px" id="base-stats-tab">
+        <div class="d-none pd-lr-dflt pd-tb-24px" id="base-stats-tab">
         </div>
-        <div class="d-none pd-lr-32px pd-tb-24px" id="evolution-tab">
+        <div class="d-none pd-lr-dflt pd-tb-24px" id="evolution-tab">
         </div>
-        <div class="d-none pd-lr-32px pd-tb-24px" id="moves-tab">
+        <div class="d-none pd-lr-dflt pd-tb-24px" id="moves-tab">
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@ function getDetailedCardCoreTemplate2Attr(indexArray) {
     />
   </div>
   <div class="overlay-info">
-    <div class="info-tabs-div pd-lr-32px">
+    <div class="info-tabs-div pd-lr-dflt">
       <button
         class="tab-lnk focus"
         onclick="showDetailedTab('about-tab')"
@@ -201,13 +201,13 @@ function getDetailedCardCoreTemplate2Attr(indexArray) {
         <div id="nav-indicator"></div>
       </nav>
     </div>
-    <div class="pd-lr-32px pd-tb-24px" id="about-tab">
+    <div class="pd-lr-dflt pd-tb-24px" id="about-tab">
     </div>
-    <div class="d-none pd-lr-32px pd-tb-24px" id="base-stats-tab">
+    <div class="d-none pd-lr-dflt pd-tb-24px" id="base-stats-tab">
     </div>
-    <div class="d-none pd-lr-32px pd-tb-24px" id="evolution-tab">
+    <div class="d-none pd-lr-dflt pd-tb-24px" id="evolution-tab">
     </div>
-    <div class="d-none pd-lr-32px pd-tb-24px" id="moves-tab">
+    <div class="d-none pd-lr-dflt pd-tb-24px" id="moves-tab">
     </div>
   </div>
   </div>

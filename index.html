@@ -39,7 +39,6 @@
     <title>Pokedex</title>
   </head>
   <body onload="init()">
-    <section class="overlay-div d-none" id="detailed-card-div"></section>
     <header>
       <div class="center-content">
         <div class="max-width-1440px">
@@ -63,7 +62,15 @@
         </div>
       </div>
     </header>
-    <div class="background-dim d-none" id="background-dim"></div>
+    <div
+      class="background-dim d-none"
+      id="background-dim"
+      onclick="closeDetailedCard()"
+    >
+      <div class="d-flex-center-center h-100vh">
+        <section class="overlay-div d-none" id="detailed-card-div"></section>
+      </div>
+    </div>
     <section class="center-content">
       <div class="max-width-1440px">
         <div class="content pd-lr-dflt pd-tb-24px" id="content"></div>

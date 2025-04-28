@@ -94,3 +94,13 @@
 .wd-100 {
   width: 100%;
 }
+
+.h-100vh {
+  height: 100vh;
+}
+
+.d-flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

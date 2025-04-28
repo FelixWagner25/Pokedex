@@ -1,6 +1,6 @@
 .pd-lr-dflt {
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .pd-lr-16px {
@@ -21,4 +21,11 @@
 .pd-lr-detailed-card {
   padding-left: 32px;
   padding-right: 32px;
+}
+
+@media (max-width: 392px) {
+  .pd-lr-dflt {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
