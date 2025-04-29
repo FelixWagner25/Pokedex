@@ -220,9 +220,13 @@ function getAboutTabTemplate(indexArray) {
         <span class="card-text">id</span>
         <span class="card-text">${currentPokemons[indexArray].id}</span>
         <span class="card-text">height</span>
-        <span class="card-text">${currentPokemons[indexArray].height} dm</span>
+        <span class="card-text">${convertDmToM(
+          currentPokemons[indexArray].height
+        )} m</span>
         <span class="card-text">weight</span>
-        <span class="card-text">${currentPokemons[indexArray].weight} hg</span>
+        <span class="card-text">${convertHgToKg(
+          currentPokemons[indexArray].weight
+        )} kg</span>
         <span class="card-text">abilities</span>
         <span class="card-text">${getPokemonAllAbilites(indexArray)}</span>
         <span class="card-text">habitat</span>

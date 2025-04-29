@@ -106,3 +106,13 @@ function valueGreaterThan50(value) {
 function stopEventPropagation(event) {
   event.stopPropagation();
 }
+
+function convertHgToKg(weightHg) {
+  let weightKg = (weightHg / 10).toFixed(1);
+  return weightKg;
+}
+
+function convertDmToM(heightDm) {
+  let heightM = (heightDm / 10).toFixed(1);
+  return heightM;
+}
