@@ -10,7 +10,9 @@ function renderCards() {
   }
 }
 
-function showDetailedCard(indexArray) {
+async function showDetailedCard(indexArray) {
+  let indexPokemon = currentPokemons[indexArray].id;
+  await loadPokemonHabitatAndEvolution(indexPokemon);
   openDetailedCard();
   renderDetailedCardCore(indexArray);
   showDetailedTab(currentDetailedTabId);

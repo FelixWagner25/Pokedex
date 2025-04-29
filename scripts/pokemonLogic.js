@@ -31,12 +31,16 @@ function initializePokemonArray() {
 async function loadSinglePokemon(indexPokemon) {
   let path = getPokemonPathByIndex(indexPokemon);
   responseJSON = await loadPokemonDataToJson(path);
+  await insertPokemonDefaultProperties(indexPokemon, responseJSON);
+}
+
+async function loadPokemonHabitatAndEvolution(indexPokemon) {
+  let path = getPokemonPathByIndex(indexPokemon);
+  responseJSON = await loadPokemonDataToJson(path);
   let pathSpecies = getSpeciesPath(responseJSON);
   responseSpeciesJSON = await loadPokemonDataToJson(pathSpecies);
   let pathEvolution = getEvolutionPath(responseSpeciesJSON);
   responseEvolutionJSON = await loadPokemonDataToJson(pathEvolution);
-
-  await insertPokemonDefaultProperties(indexPokemon, responseJSON);
   await insertPokemonHabitat(indexPokemon, responseSpeciesJSON);
   await insertPokemonEvolutionImages(indexPokemon, responseEvolutionJSON);
 }
