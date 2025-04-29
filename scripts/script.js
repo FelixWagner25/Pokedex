@@ -1,6 +1,6 @@
 let baseUrl = "https://pokeapi.co/api/v2/";
 
-let numberPokemons = 16;
+let numberPokemons = 24;
 
 let pokemonArray = [];
 
@@ -101,4 +101,8 @@ function valueGreaterThan50(value) {
     return true;
   }
   return false;
+}
+
+function stopEventPropagation(event) {
+  event.stopPropagation();
 }

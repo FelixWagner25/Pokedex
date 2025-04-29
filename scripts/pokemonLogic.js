@@ -59,7 +59,7 @@ function pokemonHas2Attributes(indexArray) {
   return false;
 }
 
-async function loadMorePokemon(additionalPokemon = 16) {
+async function loadMorePokemon(additionalPokemon = 24) {
   numberPokemons += additionalPokemon;
   disableLoadMoreBtn();
   await loadAndShowPokemons();

@@ -68,7 +68,11 @@
       onclick="closeDetailedCard()"
     >
       <div class="d-flex-center-center h-100vh">
-        <section class="overlay-div d-none" id="detailed-card-div"></section>
+        <section
+          class="overlay-div d-none"
+          id="detailed-card-div"
+          onclick="stopEventPropagation(event)"
+        ></section>
       </div>
     </div>
     <section class="center-content">
