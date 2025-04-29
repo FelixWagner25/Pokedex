@@ -1,21 +1,20 @@
-async function insertPokemonHabitat(indexPokemon) {
+async function insertPokemonHabitat(indexPokemon, responseSpeciesJSON) {
   let indexArray = indexPokemon - 1;
-  let pathSpecies = await getSpeciesPathByIndex(indexPokemon);
-  responseSpeciesJSON = await loadPokemonDataToJson(pathSpecies);
   pokemonArray[indexArray].habitat = responseSpeciesJSON.habitat.name;
 }
 
-async function insertPokemonEvolutionImages(indexPokemon) {
+async function insertPokemonEvolutionImages(
+  indexPokemon,
+  responseEvolutionJSON
+) {
   let indexArray = indexPokemon - 1;
-  evolutionImages = await getEvolutionImagesArray(indexPokemon);
+  evolutionImages = await getEvolutionImagesArray(responseEvolutionJSON);
   pokemonArray[indexArray].evolutionImages = evolutionImages;
 }
 
-async function getEvolutionImagesArray(indexPokemon) {
+async function getEvolutionImagesArray(responseEvolutionJSON) {
   let evolutionImages = [];
-  let pathEvolution = await getEvolutionPathByIndex(indexPokemon);
-  responseEvolutionJSON = await loadPokemonDataToJson(pathEvolution);
-  evolutionImages.push(getBaseLevelNameAndImage(indexPokemon));
+  evolutionImages.push(await getBaseLevelNameAndImage(responseEvolutionJSON));
   if (pokemonHasFirstEvolution(responseEvolutionJSON)) {
     evolutionImages.push(
       await getFirstEvolutionNameAndImage(responseEvolutionJSON)
@@ -40,10 +39,11 @@ async function getPokemonImagePathByIndex(indexPokemon) {
   return imagePath;
 }
 
-function getBaseLevelNameAndImage(indexPokemon) {
-  let indexArray = indexPokemon - 1;
-  let baseLevelName = pokemonArray[indexArray].name;
-  let baseLevelImg = pokemonArray[indexArray].image;
+async function getBaseLevelNameAndImage(responseEvolutionJSON) {
+  let baseLevelName = responseEvolutionJSON.chain.species.name;
+  let baseLevelImg = await getPokemonImagePathByIndex(
+    getPokemonIdFromSpeciesURL(responseEvolutionJSON.chain.species.url)
+  );
   return { name: baseLevelName, image: baseLevelImg };
 }
 
@@ -80,37 +80,61 @@ function pokemonHasSecondEvolution(evolutionJson) {
   return false;
 }
 
-async function insertPokemonDefaultProperties(indexPokemon) {
+async function insertPokemonDefaultProperties(indexPokemon, responseJSON) {
   let indexArray = indexPokemon - 1;
-  let path = getPokemonPathByIndex(indexPokemon);
-  responseJSON = await loadPokemonDataToJson(path);
-
   pokemonArray[indexArray].name = responseJSON.name;
-  let typesPokemon = [];
-  for (let indexType = 0; indexType < responseJSON.types.length; indexType++) {
-    typesPokemon[indexType] = responseJSON.types[indexType].type.name;
-  }
-  pokemonArray[indexArray].types = typesPokemon;
+  pokemonArray[indexArray].types = getPokemonTypesFromJSON(responseJSON);
   pokemonArray[indexArray].image =
     responseJSON.sprites.other.home.front_default;
   pokemonArray[indexArray].id = responseJSON.id;
   pokemonArray[indexArray].height = responseJSON.height;
   pokemonArray[indexArray].weight = responseJSON.weight;
+  pokemonArray[indexArray].abilities = getPokemonAbilitesFromJSON(responseJSON);
+  pokemonArray[indexArray].baseStats =
+    getPokemonBaseStatsFromJSON(responseJSON);
+  pokemonArray[indexArray].moves = getPokemonMovesFromJSON(responseJSON);
+}
+
+function getSpeciesPath(pokemonJSON) {
+  let speciesPath = pokemonJSON.species.url;
+  return speciesPath;
+}
+
+function getEvolutionPath(speciesJSON) {
+  let pathEvolution = speciesJSON.evolution_chain.url;
+  return pathEvolution;
+}
+
+function getPokemonTypesFromJSON(responseJSON) {
+  let typesPokemon = [];
+  for (let indexType = 0; indexType < responseJSON.types.length; indexType++) {
+    typesPokemon[indexType] = responseJSON.types[indexType].type.name;
+  }
+  return typesPokemon;
+}
+
+function getPokemonAbilitesFromJSON(responseJSON) {
   let abilitiesPokemon = [];
   for (i = 0; i < responseJSON.abilities.length; i++) {
     abilitiesPokemon[i] = responseJSON.abilities[i].ability.name;
   }
-  pokemonArray[indexArray].abilities = abilitiesPokemon;
+  return abilitiesPokemon;
+}
+
+function getPokemonBaseStatsFromJSON(responseJSON) {
   let baseStats = [];
   for (let i = 0; i < responseJSON.stats.length; i++) {
     baseStats[i] = {};
     baseStats[i].name = responseJSON.stats[i].stat.name;
     baseStats[i].value = responseJSON.stats[i].base_stat;
   }
-  pokemonArray[indexArray].baseStats = baseStats;
+  return baseStats;
+}
+
+function getPokemonMovesFromJSON(responseJSON) {
   let moves = [];
   for (let i = 0; i < responseJSON.moves.length; i++) {
     moves[i] = responseJSON.moves[i].move.name;
   }
-  pokemonArray[indexArray].moves = moves;
+  return moves;
 }

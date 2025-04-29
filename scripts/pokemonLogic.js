@@ -29,9 +29,16 @@ function initializePokemonArray() {
 }
 
 async function loadSinglePokemon(indexPokemon) {
-  await insertPokemonDefaultProperties(indexPokemon);
-  await insertPokemonHabitat(indexPokemon);
-  await insertPokemonEvolutionImages(indexPokemon);
+  let path = getPokemonPathByIndex(indexPokemon);
+  responseJSON = await loadPokemonDataToJson(path);
+  let pathSpecies = getSpeciesPath(responseJSON);
+  responseSpeciesJSON = await loadPokemonDataToJson(pathSpecies);
+  let pathEvolution = getEvolutionPath(responseSpeciesJSON);
+  responseEvolutionJSON = await loadPokemonDataToJson(pathEvolution);
+
+  await insertPokemonDefaultProperties(indexPokemon, responseJSON);
+  await insertPokemonHabitat(indexPokemon, responseSpeciesJSON);
+  await insertPokemonEvolutionImages(indexPokemon, responseEvolutionJSON);
 }
 
 async function loadPokemonDataToJson(path = "") {
@@ -81,20 +88,6 @@ function searchAndShowPokemons() {
       renderNoResultsMsg();
     }
   } else return;
-}
-
-async function getSpeciesPathByIndex(indexPokemon) {
-  let pokemonPath = getPokemonPathByIndex(indexPokemon);
-  responseJSON = await loadPokemonDataToJson(pokemonPath);
-  let speciesPath = responseJSON.species.url;
-  return speciesPath;
-}
-
-async function getEvolutionPathByIndex(indexPokemon) {
-  let pathSpecies = await getSpeciesPathByIndex(indexPokemon);
-  responseSpeciesJSON = await loadPokemonDataToJson(pathSpecies);
-  let pathEvolution = responseSpeciesJSON.evolution_chain.url;
-  return pathEvolution;
 }
 
 function pokemonHasThreeEvolutionSteps(indexArray) {
