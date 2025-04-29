@@ -1,6 +1,6 @@
 let baseUrl = "https://pokeapi.co/api/v2/";
 
-let numberPokemons = 24;
+let numberPokemons = 20;
 
 let pokemonArray = [];
 
