@@ -1,7 +1,6 @@
 .overlay-div {
   position: relative;
-  max-height: 720px;
-  max-width: 492px;
+  width: 460px;
   border-radius: 24px;
   overflow: auto;
 }
@@ -93,6 +92,7 @@
   display: flex;
   flex-direction: column;
   z-index: 3;
+  height: 264px;
 }
 
 .info-tabs-div {
@@ -181,20 +181,12 @@
 }
 
 @media (max-width: 480px) {
-  .overlay-div {
-    max-width: 320px;
-  }
-
   .overlay-name {
     font-size: 32px;
   }
 
   .tab-lnk {
     font-size: 16px;
-  }
-
-  .card-text {
-    font-size: 14px;
   }
 
   .overlay-img {

@@ -79,10 +79,15 @@ function searchAndShowPokemons() {
   if (filterKey === "") {
     currentPokemons = pokemonArray;
     renderCards();
+    enableLoadMoreBtn();
     return;
   } else if (hasMoreThan2Characters(filterKey)) {
     currentPokemons = filterPokemons(filterKey);
     renderCards();
+    disableLoadMoreBtn();
+    if (currentPokemons.length == 0) {
+      renderNoResultsMsg();
+    }
   } else return;
 }
 

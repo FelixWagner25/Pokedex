@@ -352,3 +352,11 @@ function getMovesTabTemplate(indexArray) {
           </div>
   `;
 }
+
+function getNoResultsMsgTemplate() {
+  return `
+  <div class="no-results-msg" id="no-results-msg">
+    No Results Found
+  </div>
+  `;
+}

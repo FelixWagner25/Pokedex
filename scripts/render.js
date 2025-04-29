@@ -79,7 +79,6 @@ function renderAllProgrBars(indexArray) {
 
 function insertProgrBarAttributes(htmlId, baseStatValue) {
   insertProgrBarColor(htmlId, baseStatValue);
-  //insertProgrBarValue(htmlId, baseStatValue);
   drawProgrBar(htmlId, baseStatValue);
 }
 
@@ -149,4 +148,8 @@ function getPreviousIndexArray(indexArray) {
     previousIndexArray = indexArray - 1;
   }
   return previousIndexArray;
+}
+
+function renderNoResultsMsg() {
+  document.getElementById("content").innerHTML = getNoResultsMsgTemplate();
 }
