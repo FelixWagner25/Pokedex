@@ -29,17 +29,9 @@ function initializePokemonArray() {
 }
 
 async function loadSinglePokemon(indexPokemon) {
-  await insertPokemonName(indexPokemon);
-  await insertPokemonType(indexPokemon);
-  await insertPokemonImage(indexPokemon);
-  await insertPokemonId(indexPokemon);
-  await insertPokemonHeight(indexPokemon);
-  await insertPokemonWeight(indexPokemon);
-  await insertPokemonAbilities(indexPokemon);
+  await insertPokemonDefaultProperties(indexPokemon);
   await insertPokemonHabitat(indexPokemon);
-  await insertPokemonBaseStats(indexPokemon);
   await insertPokemonEvolutionImages(indexPokemon);
-  await insertPokemonFirstFiveMoves(indexPokemon);
 }
 
 async function loadPokemonDataToJson(path = "") {
